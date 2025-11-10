@@ -5,7 +5,7 @@ import notion.api.v1.model.search.SearchResults
 import org.springframework.web.bind.annotation.{GetMapping, RestController}
 
 @RestController
-class DatabaseController(val notionService: NotionService) {
+class NotionDatabaseController(val notionService: NotionService) {
 
   @GetMapping(Array("/test"))
   def testEndpoint(): SearchResults = {
