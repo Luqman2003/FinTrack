@@ -42,6 +42,13 @@ class UserService(val userRepo: UserRepository) {
     false
   }
 
+  def doesUserEmailALreadyExist(email: String): Boolean = {
+    if (userRepo.existsByEmail(email)) {
+      return true
+    }
+    false
+  }
+
   def getUserById(userId: Long): Optional[UserEntity] = {
     userRepo.findById(userId)
   }

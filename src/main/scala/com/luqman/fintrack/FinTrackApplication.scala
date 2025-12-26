@@ -9,8 +9,5 @@ object FinTrackApplication extends App {
   SpringApplication.run(classOf[FinTrackApplication])
 
   @SpringBootApplication
-  class FinTrackApplication {
-    @Bean
-    def restTemplate(): RestTemplate = new RestTemplate()
-  }
+  class FinTrackApplication
 }

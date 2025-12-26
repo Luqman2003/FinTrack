@@ -7,21 +7,4 @@ import org.springframework.web.client.RestTemplate
 
 // deals with the connection to plaid and makes the calls to plaids api
 @Service
-class NotionService(val restTemplate: RestTemplate, val client: NotionClient) {
-
-  // need to create a page using the endpoint described here:
-  //        https://developers.notion.com/reference/post-page
-//  def appendPageToDatabase() = {
-//
-//  }
-
-  def testClient(): SearchResults = {
-    try {
-      val results: SearchResults = client.search("Test Database")
-
-      results
-    } finally {
-      client.close()
-    }
-  }
-}
+class NotionService(val client: NotionClient) {/* TODO: after implementing plaid logic, deal with this */}

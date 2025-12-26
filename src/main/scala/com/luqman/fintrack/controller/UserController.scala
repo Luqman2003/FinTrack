@@ -15,6 +15,9 @@ class UserController(val userService: UserService) {
    */
   @PostMapping(Array("/add-user"))
   def addUser(@RequestBody request: AddUserRequest): String = {
+    if (userService.doesUserEmailALreadyExist(request.email)) {
+      return "email already registered"
+    }
     userService.createUser(request.email, request.name, request.notionDatabases)
     "added user successfully to database"
   }
